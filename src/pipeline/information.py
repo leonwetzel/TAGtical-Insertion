@@ -15,7 +15,8 @@ class DownloadManager:
 
     @staticmethod
     def download():
-        """
+        """Download the .conll files from Rik van Noord's repository.
+        Contains the PMB data in a nice-to-use format.
 
         Returns
         -------
