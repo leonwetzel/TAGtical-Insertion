@@ -8,7 +8,8 @@ Contains all code and documentation of the final project of the course
 
 As the scripts in this repository may rely on external functionality,
 it might be wise to install the required software beforehand. Open your
- favourite command line interface, create a new `virtualenv` (or
+ favourite command line interface, create a new [`virtualenv`](
+ https://docs.python.org/3/library/venv.html) (or
  install the required packages system-wide if that is your preference 😀)
  and enter the following line.
  
