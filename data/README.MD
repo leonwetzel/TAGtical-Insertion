@@ -1,0 +1,1 @@
+This map contains the data from the Parallel Meaning Bank.
