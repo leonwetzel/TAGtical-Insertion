@@ -41,3 +41,21 @@ following lines of code in your Python command line interface.
 
 The files will pop up in the `data` directory. Note that this directory
 will be created automatically if it was not present before the download.
+
+### Preparing for training
+
+We cannot directly feed the data from the .conll files into the training
+script for the semantic tagger. Using the functionality in
+the package `src.preprocessing.extraction`, we convert the data
+to the format that suits spaCy. In the code sample below, you can see 
+how you can perform the conversion from your Python command line interface.
+
+```python
+>>> from src.preprocessing.extraction import extract_from_conll, to_spacy_training_format
+>>> corpus = extract_from_conll("data/train.conll")
+>>> training_data = to_spacy_training_format(corpus)
+```
+## Training the tagger
+
+As mentioned in the last subsection, we use spaCy for the construction
+of our semantic tagger.
