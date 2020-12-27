@@ -2,7 +2,10 @@
 Contains all code and documentation of the final project of the course
  Computational Semantics, taught at the University of Groningen.
  
-The goal of this application is to tag sentences using semantic tags.
+The main purpose of APPLICATION_NAME is to tag sentences using
+ semantic tags. These semantic tags are described in detail in [Abzianidze and Bos (2017)](https://www.aclweb.org/anthology/W17-6901.pdf).
+ The data used in this application originates from the Parallel Meaning
+  Bank, also known as the PMB ([Abzianidze et al., 2017](https://www.aclweb.org/anthology/E17-2039.pdf)).
 
 ## Getting started
 
@@ -19,17 +22,18 @@ it might be wise to install the required software beforehand. Open your
 pip install -r requirements.txt
 ```
 
-When you have installed the required packages, you are ready to explore
+When you have installed the required packages, you are ready to further
+explore the functionalities of APPLICATION_NAME!
 
 
 ### Obtaining the PMB data
 
 Before you can train and/or test the tagger, you need to download the
- data from the [Parallel Meaning Bank](https://pmb.let.rug.nl/) (also
-  known as the PMB). We use
+ data from the [Parallel Meaning Bank](https://pmb.let.rug.nl/). We use
   the .conll files from [Rik van Noord's](http://www.rikvannoord.nl/)
    [GitHub repository](https://github.com/RikVN/DRS_parsing), as these
-    files are already preprocessed and standardised for easier use.
+    files are already preprocessed and standardised for easier use
+     ([Abzianidze et al., 2017](https://www.aclweb.org/anthology/E17-2039.pdf)).
     
 You can easily download these files from the repository by entering the
 following lines of code in your Python command line interface.
@@ -59,3 +63,11 @@ how you can perform the conversion from your Python command line interface.
 
 As mentioned in the last subsection, we use spaCy for the construction
 of our semantic tagger.
+
+## References
+
+Lasha Abzianidze, Johan Bos (2017): Towards Universal Semantic Tagging. Proceedings of the 12th International Conference on Computational Semantics (IWCS 2017) -- Short Papers, pp 1–6, Montpellier, France.
+
+Lasha Abzianidze, Johannes Bjerva, Kilian Evang, Hessel Haagsma, Rik van Noord, Pierre Ludmann, Duc-Duy Nguyen, Johan Bos (2017): The Parallel Meaning Bank: Towards a Multilingual Corpus of Translations Annotated with Compositional Meaning Representations. Proceedings of the 15th Conference of the European Chapter of the Association for Computational Linguistics (EACL), pp 242–247, Valencia, Spain.
+
+Abzianidze, L., Bjerva, J., Evang, K., Haagsma, H., van Noord, R., Ludmann, P., Nguyen, D. & Bos, J. The Parallel Meaning Bank: Towards a Multilingual Corpus of Translations Annotated with Compositional Meaning Representations, EACL 2017
