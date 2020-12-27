@@ -1,6 +1,8 @@
 # Computational Semantics
 Contains all code and documentation of the final project of the course
  Computational Semantics, taught at the University of Groningen.
+ 
+The goal of this application is to tag sentences using semantic tags.
 
 ## Getting started
 
