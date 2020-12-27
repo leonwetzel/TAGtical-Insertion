@@ -30,8 +30,9 @@ class DownloadManager:
                                     allow_redirects=True)
             total_size_in_bytes = int(
                 response.headers.get('content-length'))
+            filename = file.split('/')[-1]
 
-            with open(rf"data/{file.split('/')[-1]}", 'wb') as f:
+            with open(rf"data/{filename}", 'wb') as f:
                 with tqdm(total=total_size_in_bytes, unit="B",
                           unit_scale=True, desc=file,
                           initial=0, ascii=True) as pbar:
