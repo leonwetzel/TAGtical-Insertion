@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import pickle
 import re
 
 
@@ -17,7 +18,7 @@ def extract_from_conll(filename):
         Converted data in spaCy-friendly format.
     """
     corpus = {}
-    with open(filename, "r") as F:
+    with open(filename, "r", encoding='utf-8') as F:
         lines = F.readlines()
 
     tokens, lemmas, semantic_tags, entities = [], [], [], []
@@ -97,3 +98,19 @@ def to_spacy_training_format(corpus):
                  {"entities": sentence['entities']})
         training_data.append(entry)
     return training_data
+
+
+def store(corpus, filename):
+    """
+
+    Parameters
+    ----------
+    corpus
+    filename
+
+    Returns
+    -------
+
+    """
+    with open(filename, "wb") as F:
+        pickle.dump(corpus, F)
