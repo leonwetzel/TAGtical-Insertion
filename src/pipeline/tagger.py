@@ -5,7 +5,7 @@ existing model or a blank model.
 
 For more details, see the documentation:
 * Training: https://spacy.io/usage/training
-* NER: https://spacy.io/usage/linguistic-features#named-entities
+* ner: https://spacy.io/usage/linguistic-features#named-entities
 
 Compatible with: spaCy v2.0.0+
 Last tested with: v2.2.4
@@ -20,12 +20,15 @@ import plac
 import spacy
 from spacy.util import minibatch, compounding
 
+from src.preprocessing.extraction import to_spacy_training_format,\
+    extract_from_conll
+
 # training data
-TRAIN_DATA = [
-    ("Who is Shaka Khan?", {"entities": [(7, 17, "PERSON")]}),
-    ("I like London and Berlin.",
-     {"entities": [(7, 13, "LOC"), (18, 24, "LOC")]}),
-]
+# train_data = [
+#     ("Who is Shaka Khan?", {"entities": [(7, 17, "PERSON")]}),
+#     ("I like London and Berlin.",
+#      {"entities": [(7, 13, "LOC"), (18, 24, "LOC")]}),
+# ]
 
 
 @plac.annotations(
@@ -43,6 +46,9 @@ def main(model=None, output_dir=None, n_iter=100):
         nlp = spacy.blank("en")  # create blank Language class
         print("Created blank 'en' model")
 
+    corpus = extract_from_conll("../../data/train.conll")
+    train_data = to_spacy_training_format(corpus)
+
     # create the built-in pipeline components and add them to the pipeline
     # nlp.create_pipe works for built-ins that are registered with spaCy
     if "ner" not in nlp.pipe_names:
@@ -53,7 +59,7 @@ def main(model=None, output_dir=None, n_iter=100):
         ner = nlp.get_pipe("ner")
 
     # add labels
-    for _, annotations in TRAIN_DATA:
+    for _, annotations in train_data:
         for ent in annotations.get("entities"):
             ner.add_label(ent[2])
 
@@ -61,7 +67,7 @@ def main(model=None, output_dir=None, n_iter=100):
     pipe_exceptions = ["ner", "trf_wordpiecer", "trf_tok2vec"]
     other_pipes = [pipe for pipe in nlp.pipe_names if
                    pipe not in pipe_exceptions]
-    # only train NER
+    # only train ner
     with nlp.disable_pipes(*other_pipes), warnings.catch_warnings():
         # show warnings for misaligned entity spans once
         warnings.filterwarnings("once", category=UserWarning,
@@ -72,10 +78,10 @@ def main(model=None, output_dir=None, n_iter=100):
         if model is None:
             nlp.begin_training()
         for itn in range(n_iter):
-            random.shuffle(TRAIN_DATA)
+            random.shuffle(train_data)
             losses = {}
             # batch up the examples using spaCy's minibatch
-            batches = minibatch(TRAIN_DATA,
+            batches = minibatch(train_data,
                                 size=compounding(4.0, 32.0, 1.001))
             for batch in batches:
                 texts, annotations = zip(*batch)
@@ -89,7 +95,7 @@ def main(model=None, output_dir=None, n_iter=100):
             print("Losses", losses)
 
     # test the trained model
-    for text, _ in TRAIN_DATA:
+    for text, _ in train_data:
         doc = nlp(text)
         print("Entities", [(ent.text, ent.label_) for ent in doc.ents])
         print("Tokens", [(t.text, t.ent_type_, t.ent_iob) for t in doc])
@@ -105,7 +111,7 @@ def main(model=None, output_dir=None, n_iter=100):
         # test the saved model
         print("Loading from", output_dir)
         nlp2 = spacy.load(output_dir)
-        for text, _ in TRAIN_DATA:
+        for text, _ in train_data:
             doc = nlp2(text)
             print("Entities",
                   [(ent.text, ent.label_) for ent in doc.ents])
