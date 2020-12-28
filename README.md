@@ -59,6 +59,15 @@ how you can perform the conversion from your Python command line interface.
 >>> corpus = extract_from_conll("data/train.conll")
 >>> training_data = to_spacy_training_format(corpus)
 ```
+
+We also added functionality to store the training data in a pickle,
+so you can quickly re-use the data at a later moment.
+
+```python
+>>> from src.preprocessing.extraction import store
+>>> store(training_data, "data/training_data.pickle")
+```
+
 ## Training the tagger
 
 As mentioned in the last subsection, we use spaCy for the construction
