@@ -71,7 +71,10 @@ so you can quickly re-use the data at a later moment.
 ## Training the tagger
 
 As mentioned in the last subsection, we use spaCy for the construction
-of our semantic tagger.
+of our semantic tagger [(Montani et al., 2020)](https://doi.org/10.5281/zenodo.1212303). spaCy offers functionality to create custom NER-like taggers.
+We can apply the same techniques to perform semantic tagging, using the
+tags mentioned in [Abzianidze and Bos (2017)](https://www.aclweb.org/anthology/W17-6901.pdf)
+as the labels for the tokens.
 
 ## References
 
@@ -80,3 +83,5 @@ Lasha Abzianidze, Johan Bos (2017): Towards Universal Semantic Tagging. Proceedi
 Lasha Abzianidze, Johannes Bjerva, Kilian Evang, Hessel Haagsma, Rik van Noord, Pierre Ludmann, Duc-Duy Nguyen, Johan Bos (2017): The Parallel Meaning Bank: Towards a Multilingual Corpus of Translations Annotated with Compositional Meaning Representations. Proceedings of the 15th Conference of the European Chapter of the Association for Computational Linguistics (EACL), pp 242–247, Valencia, Spain.
 
 Abzianidze, L., Bjerva, J., Evang, K., Haagsma, H., van Noord, R., Ludmann, P., Nguyen, D. & Bos, J. The Parallel Meaning Bank: Towards a Multilingual Corpus of Translations Annotated with Compositional Meaning Representations, EACL 2017
+
+Ines Montani, Matthew Honnibal, Matthew Honnibal, Sofie Van Landeghem, Adriane Boyd, Henning Peters, … Avadh Patel. (2020, December 11). explosion/spaCy: v2.3.5: Bug fixes and simpler source installs (Version v2.3.5). Zenodo. http://doi.org/10.5281/zenodo.4317367
