@@ -36,6 +36,8 @@ def extract_from_conll(filename):
                 entities = [get_coordinates(token, tag, sentence) for
                             token, tag in zip(tokens, semantic_tags)]
 
+
+
                 corpus[sentence_id] = {
                     "sentence": sentence,
                     "tokens": tokens.copy(),
@@ -76,8 +78,14 @@ def get_coordinates(token, tag, sentence):
     -------
 
     """
-    start_index = sentence.find(token)
+    start_index = sentence.find(token.strip())
     end_index = start_index + len(token)  # if the start_index is not -1
+    #indexes = [(m.start(0), m.end(0)) for m in
+    # re.finditer(rf"\b{token}\b", sentence)]
+    print(sentence)
+    for m in re.finditer(rf"\b({token})\b", sentence):
+        print(token, m.start(), m.end(), m.group(0))
+    print()
     return start_index, end_index, tag
 
 
