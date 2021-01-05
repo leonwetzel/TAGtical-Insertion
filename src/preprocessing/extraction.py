@@ -83,7 +83,7 @@ def get_coordinates(token, tag, sentence):
     #indexes = [(m.start(0), m.end(0)) for m in
     # re.finditer(rf"\b{token}\b", sentence)]
     print(sentence)
-    for m in re.finditer(rf"\b({token})\b", sentence):
+    for m in re.finditer(rf"(\b(\w+|\d+)\b)|([.,\/#@?!$%\^&\*;:=\-_`~()])", sentence):
         print(token, m.start(), m.end(), m.group(0))
     print()
     return start_index, end_index, tag
