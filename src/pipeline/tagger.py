@@ -49,6 +49,8 @@ def main(model=None, output_dir=None, n_iter=100):
     corpus = extract_from_conll("../../data/train.conll")
     train_data = to_spacy_training_format(corpus)
 
+    print(train_data)
+
     # create the built-in pipeline components and add them to the pipeline
     # nlp.create_pipe works for built-ins that are registered with spaCy
     if "ner" not in nlp.pipe_names:

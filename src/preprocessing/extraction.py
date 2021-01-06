@@ -21,22 +21,23 @@ def extract_from_conll(filename):
     with open(filename, "r", encoding='utf-8') as F:
         lines = F.readlines()
 
-    tokens, lemmas, semantic_tags, entities = [], [], [], []
+    tokens, lemmas, semantic_tags = [], [], []
     sentence_id = None
 
     for line in lines:
+        # start of document
         if line.startswith('# newdoc id'):
             sentence_id = line.split(" ")[-1].strip()
+        # end of document
         elif line.isspace():
             if tokens and semantic_tags:
                 sentence = " ".join(tokens)
                 sentence = re.sub(
                     r"\s([,?.!'`](?:\s*|$))", r'\1', sentence
                 )
-                entities = [get_coordinates(token, tag, sentence) for
-                            token, tag in zip(tokens, semantic_tags)]
 
-
+                entities = get_coordinates(tokens, semantic_tags,
+                                           sentence)
 
                 corpus[sentence_id] = {
                     "sentence": sentence,
@@ -48,7 +49,7 @@ def extract_from_conll(filename):
                 tokens.clear()
                 lemmas.clear()
                 semantic_tags.clear()
-                entities.clear()
+        # within document
         else:
             # TODO figure out which info to use
             token, lemma, sem_tag, ccg_tag, sense, themes = line.split()
@@ -59,7 +60,7 @@ def extract_from_conll(filename):
     return corpus
 
 
-def get_coordinates(token, tag, sentence):
+def get_coordinates(tokens, tags, sentence):
     """Get coordinates of a given token in a sentence.
 
     Returns the coordinates in a spaCy-friendly format,
@@ -78,15 +79,18 @@ def get_coordinates(token, tag, sentence):
     -------
 
     """
-    start_index = sentence.find(token.strip())
-    end_index = start_index + len(token)  # if the start_index is not -1
-    #indexes = [(m.start(0), m.end(0)) for m in
-    # re.finditer(rf"\b{token}\b", sentence)]
-    print(sentence)
-    for m in re.finditer(rf"(\b(\w+|\d+)\b)|([.,\/#@?!$%\^&\*;:=\-_`~()])", sentence):
-        print(token, m.start(), m.end(), m.group(0))
-    print()
-    return start_index, end_index, tag
+    # {"entities": [(0, 4, "ORG")]}
+    training_data = []
+    counter = 0
+    pattern = rf"(\b(\w+|\d+)\b)|([.,\/#@?!$%\^&\*;:=\-_`~()])"
+    amount_of_matches = len([*re.finditer(pattern, sentence)])
+
+    for m in re.finditer(pattern, sentence):
+        if len(tokens) == amount_of_matches:
+            token = (m.start(), m.end(), tags[counter])
+            counter += 1
+            training_data.append(token)
+    return training_data
 
 
 def to_spacy_training_format(corpus):
