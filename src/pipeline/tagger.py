@@ -20,7 +20,7 @@ import plac
 import spacy
 from spacy.util import minibatch, compounding
 
-from src.preprocessing.extraction import to_spacy_training_format,\
+from src.preprocessing.extraction import to_spacy_format,\
     extract_from_conll
 
 # training data
@@ -47,7 +47,7 @@ def main(model=None, output_dir=None, n_iter=100):
         print("Created blank 'en' model")
 
     corpus = extract_from_conll("../../data/train.conll")
-    train_data = to_spacy_training_format(corpus)
+    train_data = to_spacy_format(corpus)
 
     print(train_data)
 

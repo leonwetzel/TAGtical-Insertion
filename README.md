@@ -55,9 +55,9 @@ to the format that suits spaCy. In the code sample below, you can see
 how you can perform the conversion from your Python command line interface.
 
 ```python
->>> from src.preprocessing.extraction import extract_from_conll, to_spacy_training_format
+>>> from src.preprocessing.extraction import extract_from_conll, to_spacy_format
 >>> corpus = extract_from_conll("data/train.conll")
->>> training_data = to_spacy_training_format(corpus)
+>>> training_data = to_spacy_format(corpus)
 ```
 
 We also added functionality to store the training data in a pickle,

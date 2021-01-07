@@ -93,7 +93,7 @@ def get_coordinates(tokens, tags, sentence):
     return training_data
 
 
-def to_spacy_training_format(corpus):
+def to_spacy_format(corpus):
     """
 
     Parameters
