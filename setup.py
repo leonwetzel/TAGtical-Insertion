@@ -10,5 +10,5 @@ setup(name='Distutils',
                    ' m.spijkerman.1@student.rug.nl,'
                    ' n.g.van.t.slot@student.rug.nl',
       url='https://github.com/leonwetzel/Computational-Semantics',
-      packages=['src', 'src.pipeline', 'src.preprocessing'],
+      packages=['tagtical_insertion', 'tagtical_insertion.pipeline', 'tagtical_insertion.preprocessing'],
      )

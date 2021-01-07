@@ -20,7 +20,7 @@ import plac
 import spacy
 from spacy.util import minibatch, compounding
 
-from src.preprocessing.extraction import to_spacy_format,\
+from tagtical_insertion.preprocessing.extraction import to_spacy_format,\
     extract_from_conll
 
 # training data

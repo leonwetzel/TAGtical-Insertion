@@ -1,8 +1,8 @@
-# Computational Semantics
+# TAGtical Insertion
 Contains all code and documentation of the final project of the course
  Computational Semantics, taught at the University of Groningen.
  
-The main purpose of APPLICATION_NAME is to tag sentences using
+The main purpose of TAGtical Insertion is to tag sentences using
  semantic tags. These semantic tags are described in detail in [Abzianidze and Bos (2017)](https://www.aclweb.org/anthology/W17-6901.pdf).
  The data used in this application originates from the Parallel Meaning
   Bank, also known as the PMB ([Abzianidze et al., 2017](https://www.aclweb.org/anthology/E17-2039.pdf)).
@@ -23,7 +23,7 @@ pip install -r requirements.txt
 ```
 
 When you have installed the required packages, you are ready to further
-explore the functionalities of APPLICATION_NAME!
+explore the functionalities of TAGtical Insertion!
 
 
 ### Obtaining the PMB data
@@ -39,7 +39,7 @@ You can easily download these files from the repository by entering the
 following lines of code in your Python command line interface.
 
 ```python
->>> from src.pipeline.information import DownloadManager
+>>> from tagtical_insertion.pipeline.information import DownloadManager
 >>> DownloadManager.download()
 ```
 
@@ -55,7 +55,7 @@ to the format that suits spaCy. In the code sample below, you can see
 how you can perform the conversion from your Python command line interface.
 
 ```python
->>> from src.preprocessing.extraction import extract_from_conll, to_spacy_format
+>>> from tagtical_insertion.preprocessing.extraction import extract_from_conll, to_spacy_format
 >>> corpus = extract_from_conll("data/train.conll")
 >>> training_data = to_spacy_format(corpus)
 ```
@@ -64,7 +64,7 @@ We also added functionality to store the training data in a pickle,
 so you can quickly re-use the data at a later moment.
 
 ```python
->>> from src.preprocessing.extraction import store
+>>> from tagtical_insertion.preprocessing.extraction import store
 >>> store(training_data, "data/training_data.pickle")
 ```
 

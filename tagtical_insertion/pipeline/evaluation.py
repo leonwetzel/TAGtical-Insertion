@@ -3,7 +3,7 @@ from __future__ import unicode_literals, print_function
 
 import os
 import sys
-sys.path.insert(0, '/home/tux/Computational-Semantics/src/preprocessing/')
+sys.path.insert(0, '/home/tux/Computational-Semantics/tagtical_insertion/preprocessing/')
 import re
 import random
 import warnings
@@ -20,7 +20,7 @@ from extraction import extract_from_conll
 from extraction import get_coordinates
 
 
-output_dir = '/home/tux/Computational-Semantics/src/pipeline/model/'
+output_dir = '/home/tux/Computational-Semantics/tagtical_insertion/pipeline/model/'
 print("Loading from", output_dir)
 nlp2 = spacy.load(output_dir)
 corpus = extract_from_conll("/home/tux/Computational-Semantics/data/test.conll")
