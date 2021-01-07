@@ -39,7 +39,7 @@ You can easily download these files from the repository by entering the
 following lines of code in your Python command line interface.
 
 ```python
->>> from src.pipeline.retrieval import DownloadManager
+>>> from src.pipeline.information import DownloadManager
 >>> DownloadManager.download()
 ```
 
