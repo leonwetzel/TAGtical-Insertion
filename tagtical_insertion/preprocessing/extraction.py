@@ -21,7 +21,7 @@ def extract_from_conll(filename):
     with open(filename, "r", encoding='utf-8') as F:
         lines = F.readlines()
 
-    tokens, lemmas, semantic_tags = [], [], []
+    tokens, semantic_tags = [], []
     sentence_id = None
 
     for line in lines:
@@ -32,9 +32,7 @@ def extract_from_conll(filename):
         elif line.isspace():
             if tokens and semantic_tags:
                 sentence = " ".join(tokens)
-                sentence = re.sub(
-                    r"\s([,?.!'`](?:\s*|$))", r'\1', sentence
-                )
+                print(sentence)
 
                 entities = get_coordinates(tokens, semantic_tags,
                                            sentence)
@@ -42,19 +40,15 @@ def extract_from_conll(filename):
                 corpus[sentence_id] = {
                     "sentence": sentence,
                     "tokens": tokens.copy(),
-                    "lemmas": lemmas.copy(),
                     "semantic_tags": semantic_tags.copy(),
                     "entities": entities.copy()
                 }
                 tokens.clear()
-                lemmas.clear()
                 semantic_tags.clear()
         # within document
         else:
-            # TODO figure out which info to use
-            token, lemma, sem_tag, ccg_tag, sense, themes = line.split()
+            token, _, sem_tag, _, _, _ = line.split()
             tokens.append(token)
-            lemmas.append(lemma)
             semantic_tags.append(sem_tag)
 
     return corpus
@@ -82,7 +76,7 @@ def get_coordinates(tokens, tags, sentence):
     # {"entities": [(0, 4, "ORG")]}
     training_data = []
     counter = 0
-    pattern = rf"(\b(\w+|\d+)\b)|([.,\/#@?!$%\^&\*;:=\-_`~()])"
+    pattern = rf"(\b(\w+|\d+)\b)|([.,\/#@?!$%\^&\*;:=\-_`()])"
     amount_of_matches = len([*re.finditer(pattern, sentence)])
 
     for m in re.finditer(pattern, sentence):
@@ -94,22 +88,25 @@ def get_coordinates(tokens, tags, sentence):
 
 
 def to_spacy_format(corpus):
-    """
+    """Gets the relevant information from the corpus
+    for use with spaCy.
 
     Parameters
     ----------
     corpus : dict
+        Object that contains sentences and the tags, along with their
+        respective coordinates.
 
     Returns
     -------
 
     """
-    training_data = []
+    data = []
     for _, sentence in corpus.items():
         entry = (sentence['sentence'],
                  {"entities": sentence['entities']})
-        training_data.append(entry)
-    return training_data
+        data.append(entry)
+    return data
 
 
 def store(corpus, filename):

@@ -16,7 +16,7 @@ The main purpose of TAGtical Insertion is to tag sentences using
 
 As the scripts in this repository may rely on external functionality,
 it might be wise to install the required software beforehand. Open your
- favourite command line interface, create a new [`virtualenv`](
+ favourite command line interface, create a new [`venv`](
  https://docs.python.org/3/library/venv.html) (or
  install the required packages system-wide if that is your preference 😀)
  and enter the following line.
@@ -53,7 +53,7 @@ will be created automatically if it was not present before the download.
 
 We cannot directly feed the data from the .conll files into the training
 script for the semantic tagger. Using the functionality in
-the package `src.preprocessing.extraction`, we convert the data
+the package `tagtical_insertion.preprocessing.extraction`, we convert the data
 to the format that suits spaCy. In the code sample below, you can see 
 how you can perform the conversion from your Python command line interface.
 
@@ -71,6 +71,10 @@ so you can quickly re-use the data at a later moment.
 >>> store(training_data, "data/training_data.pickle")
 ```
 
+Using `pickle` can be convenient when you want to use other data to train
+the tagger. Overall, the preprocessing steps should not take long
+when using the data from Rik van Noord's repository.
+
 ## Training the tagger
 
 As mentioned in the last subsection, we use spaCy for the construction
@@ -78,6 +82,8 @@ of our semantic tagger [(Montani et al., 2020)](https://doi.org/10.5281/zenodo.1
 We can apply the same techniques to perform semantic tagging, using the
 tags mentioned in [Abzianidze and Bos (2017)](https://www.aclweb.org/anthology/W17-6901.pdf)
 as the labels for the tokens.
+
+The script ``tagger.py`` offers the functionality to create a tagger model
 
 ## References
 
