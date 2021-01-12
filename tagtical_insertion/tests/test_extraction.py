@@ -35,7 +35,8 @@ class TestClassExtraction:
          ),
         ("Where is Prairie~View~A&M~University ?",
          ['Where', 'is', 'Prairie~View~A&M~University', '?'],
-         ['QUE', ''])
+         ['QUE', 'NOW', 'ORG', 'QUE'],
+         [(0, 5, 'QUE'), (6, 8, 'NOW'), (9, 36, "ORG"), (37, 38, "QUE")])
     ]
 
     @pytest.mark.parametrize('sentence, tokens, tags, expected',
