@@ -36,7 +36,11 @@ class TestClassExtraction:
         ("Where is Prairie~View~A&M~University ?",
          ['Where', 'is', 'Prairie~View~A&M~University', '?'],
          ['QUE', 'NOW', 'ORG', 'QUE'],
-         [(0, 5, 'QUE'), (6, 8, 'NOW'), (9, 36, "ORG"), (37, 38, "QUE")])
+         [(0, 5, 'QUE'), (6, 8, 'NOW'), (9, 36, "ORG"), (37, 38, "QUE")]
+         )#,
+        # ("We visited a huge amusement~park in São~Paulo .",
+        #  ["We", "visited", 'a', 'huge', 'amusement~park', 'in', 'São~Paulo', '.'],
+        #  ["PRO"])
     ]
 
     @pytest.mark.parametrize('sentence, tokens, tags, expected',

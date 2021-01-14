@@ -22,8 +22,8 @@ from extraction import get_coordinates
 def main():
 	output_dir = 'model/'
 	print("Loading from", output_dir)
-	nlp2 = spacy.load(output_dir)
-	corpus = extract_from_conll("../../data/test.conll")
+	nlp = spacy.load(output_dir)
+	corpus = extract_from_conll("../../data/dev.conll")
 	train_data = to_spacy_format(corpus)
 
 	y_given = []
@@ -32,7 +32,7 @@ def main():
 	correct_token = 0
 	no_entities = 0
 	for text, _ in train_data:
-		prediction = nlp2(text)
+		prediction = nlp(text)
 		real = train_data[cnt][1].get('entities')
 		if len(real) == 0:
 			no_entities +=1

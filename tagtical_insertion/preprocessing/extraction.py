@@ -76,7 +76,7 @@ def get_coordinates(tokens, tags, sentence):
     # {"entities": [(0, 4, "ORG")]}
     training_data = []
     counter = 0
-    pattern = rf"[0-9a-zA-z~&.?,`'’°:]+"
+    pattern = rf"[0-9a-zA-z~&.?!$%€,`'’°:;\"]+"
     amount_of_matches = len([*re.finditer(pattern, sentence)])
 
     for m in re.finditer(pattern, sentence):
