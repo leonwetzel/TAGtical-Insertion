@@ -52,6 +52,7 @@
       "GEO",
       "GPE",
       "GPO",
+      "GRE",
       "GRP",
       "HAP",
       "HAS",
@@ -88,6 +89,7 @@
       "SUB",
       "TOP",
       "UOM",
+      "XCL",
       "YOC"
     ]
   }
