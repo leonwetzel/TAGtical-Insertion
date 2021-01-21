@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+"""
+evaluation.py
+
+This script performs the evaluation on out Spacy Semantic Label Tagger.
+It outputs multiple text files:
+- evaluation.txt: Contains the overall f1 score, as well as the incorrectly predicted sentences for development and error analysis.
+- label_scores.txt: Contains the f1 score and the amnount of instances per label in the dataset.
+"""
 
 #all kinds of imports
 from __future__ import unicode_literals, print_function
@@ -9,7 +17,7 @@ import sys
 #sys.path.insert(0, '../preprocessing/')
 #for some reason general paths don't work right now on Marjolein's/my virtual box, thus other path here :)
 #comment away the path you don't need
-sys.path.insert(0, '/home/tux/Computational-Semantics/tagtical_insertion/preprocessing/')
+sys.path.insert(0, "../preprocessing/")
 
 import re
 import random
@@ -20,6 +28,7 @@ import plac
 import spacy
 from spacy.util import minibatch, compounding
 import sklearn
+from sklearn import classification_report, f1_score
 
 #imports from extraction.py
 import extraction
@@ -27,10 +36,56 @@ from extraction import to_spacy_format
 from extraction import extract_from_conll
 from extraction import get_coordinates
 
+def uneven_tokens(pred_entities, gold_entities):
+	"""
+	This function is called whenever the amount of tokens in the pred and gold data are uneven.
+	It adds an articifal label --- to whichever data is shorter until the two are of an even length.
+	"""
+	pred_labels = []
+	gold_labels = []
+	for entity in pred_entities:
+		pred_labels.append(entity.label_)
+
+	for item in gold_entities:
+		gold_labels.append(item[2])
+
+	if len(pred_labels) > len(gold_labels):
+		while len(pred_labels) > len(gold_labels):
+			gold_labels.append('---')
+
+	else:
+		while len(gold_labels) > len(pred_labels):
+			pred_labels.append('---')
+
+	return pred_labels, gold_labels
+
+
+def label_scores(y_given, y_predicted):
+	"""
+	This function calculates the f1 score per label in the data.
+	It sorts and writes the scores in a .txt file.
+	"""
+	scores_dict = classification_report(y_given,y_predicted, output_dict=True)
+
+	f1_dict = {}
+	for key in scores_dict:
+		if len(key) == 3:
+			f1_dict[key] = scores_dict[key]
+
+	sorted_scores = dict(sorted(f1_dict.items(), key=lambda item: (item[1]['f1-score'], item[1]['support']), reverse=True))
+
+	f2 = open("label_scores.txt", "w+")
+
+	f2.write("label\tf1-score\t# of instances\n")
+	for key in sorted_scores:
+		f2.write(key + "\t" + str(round(sorted_scores[key]['f1-score'], 4)) + "\t" + str(sorted_scores[key]['support']) + "\n")
+
+	f2.close()
+
 def main():
 	#load the created model
 	#output_dir = 'model/'
-	output_dir = '/home/tux/Computational-Semantics/tagtical_insertion/pipeline/model/'
+	output_dir = "model/"
 	
 	#not necessary I think
 	print("Loading from", output_dir)
@@ -38,7 +93,7 @@ def main():
 	#load the data you want to test on
 	nlp = spacy.load(output_dir)
 	#corpus = extract_from_conll("../../data/dev.conll")
-	corpus = extract_from_conll("/home/tux/Computational-Semantics/data/dev.conll")
+	corpus = extract_from_conll("../../data/dev.conll")
 	data = to_spacy_format(corpus)
 	
 	#create a list that will keep track of the original tags and predicted tags
@@ -88,9 +143,14 @@ def main():
 		else:
 			wrong_token += 1
 			list_of_sentences_with_wrong_tokens.append(text)
+			pred_labels, gold_labels = uneven_tokens(prediction.ents, real)
+			for label in pred_labels:
+				y_predicted.append(label)
+			for label in gold_labels:
+				y_given.append(label)
 			
 		cnt +=1
-	
+
 	correct = cnt - wrong_token - no_entities
 	with open('evaluation.txt', 'w') as f:
 		f.write("We evaluated the model on the file dev.conll")
@@ -120,7 +180,6 @@ def main():
 		
 		f.write("We evaluated the performance of the tagger on the set of sentences that is correctly tokenized.")
 		f.write("\n")
-		from sklearn.metrics import f1_score
 		f.write("The F-Score returns the following score:" + str(f1_score(y_given,y_predicted, average='micro')))
 		f.write("\n")
 		
@@ -136,7 +195,8 @@ def main():
 			f.write("\n")					
 		
 
-		
+	label_scores(y_given, y_predicted)
+
 	#print(cnt)
 	
 	#print(wrong_token)
