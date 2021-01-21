@@ -18,6 +18,7 @@ import sys
 #for some reason general paths don't work right now on Marjolein's/my virtual box, thus other path here :)
 #comment away the path you don't need
 sys.path.insert(0, "../preprocessing/")
+#sys.path.insert(0, '/home/tux/Computational-Semantics/tagtical_insertion/preprocessing/')
 
 import re
 import random
@@ -28,7 +29,7 @@ import plac
 import spacy
 from spacy.util import minibatch, compounding
 import sklearn
-from sklearn import classification_report, f1_score
+from sklearn.metrics import classification_report, f1_score
 
 #imports from extraction.py
 import extraction
@@ -86,6 +87,7 @@ def main():
 	#load the created model
 	#output_dir = 'model/'
 	output_dir = "model/"
+	#output_dir = '/home/tux/Computational-Semantics/tagtical_insertion/pipeline/model/'
 	
 	#not necessary I think
 	print("Loading from", output_dir)
@@ -94,6 +96,7 @@ def main():
 	nlp = spacy.load(output_dir)
 	#corpus = extract_from_conll("../../data/dev.conll")
 	corpus = extract_from_conll("../../data/dev.conll")
+	#corpus = extract_from_conll("/home/tux/Computational-Semantics/data/train.conll")
 	data = to_spacy_format(corpus)
 	
 	#create a list that will keep track of the original tags and predicted tags

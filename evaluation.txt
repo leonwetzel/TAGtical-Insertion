@@ -1,0 +1,638 @@
+We evaluated the model on the file dev.conll
+This file consists of 6620 sentences.
+Out of these 6620 sentences, 6589 sentences are correctly tokenized
+
+26 sentence(s) are not tokenized at all, and return an empty string, these include the following sentence(s):
+The ruling Panhellenic~Socialist~Movement ( PASOK ) of Costas~Simitis was re-elected , defeating the liberal-conservative New~Democracy party of Miltiadis~Evert .
+The peacock ( Inachis~io ) is a beautiful and easily recognizable butterfly .
+My wife 's name is Lidia~Zarębowa .
+Ken hugged Tom ’s fiancée .
+Actinium was discovered by André-Louis~Debierne in 1899 .
+Pierre~Bérégovoy commits suicide .
+Spain is called " España " in Spanish .
+What is Mika~Kaurismäki 's brother 's name ?
+What composer wrote " Die~Götterdämmerung " ?
+Pretoria is located in Côte~d'Ivoire .
+Albania is called " Shqipëria " in Albanian .
+This afternoon , Becker lost to Austrian Gilbert~Schaller ( 2:6 , 2:6 ) .
+New elections in Côte~d'Ivoire will take place on July 14 .
+He was educated in his native town , and at the university~of~Liège .
+NIKOLAI~LENIN ( Vladimir~Illitch~Ulianov )
+In January 1896 Röntgen performed the experiment again at a scientific society .
+This is an exceptional rosé~wine .
+Her name is Tiên .
+André~Henri~Constant~van~Hasselt was educated in Maastricht .
+Côte~d'Ivoire is located in Africa .
+Ivan~IV ( Ivan~the~Terrible ) forced many Tatars to convert from Islam to Christianity .
+The movie “ Speed ” was directed by Jan~De~Bont .
+Morocco is called " Meṛṛuk " in Berber .
+Agnès looked at the brown boats .
+Andris~Bērziņš will become the new president of Latvia .
+We believed that the object was a UFO ( Unidentified~Flying~Object ) .
+
+5 sentence(s) have an incorrect number of tokens. These include the following sentence(s):
+Coventry is a city in the UK .
+Christie's is one of the world 's largest auction~houses .
+I 'm very fashion - conscious .
+The red lamp lights up in case of danger .
+The she - wolf is howling .
+
+We evaluated the performance of the tagger on the set of sentences that is correctly tokenized.
+The F-Score returns the following score:0.9954945391927913
+In total 149 sentences with incorrect tags were found. These were found in the following sentences:
+Sentence: A cobbler is also~known~as a shoemaker .
+Correct tags: ['AND', 'ROL', 'ENS', 'ALT', 'DIS', 'ROL', 'NIL']
+Predicted tags: ['DIS', 'ROL', 'ENS', 'ALT', 'DIS', 'ROL', 'NIL']
+
+Sentence: The results are n't out yet .
+Correct tags: ['DEF', 'CON', 'NOW', 'NOT', 'EXS', 'ALT', 'NIL']
+Predicted tags: ['DEF', 'CON', 'NOW', 'NOT', 'IST', 'ALT', 'NIL']
+
+Sentence: I 'm not overweight .
+Correct tags: ['PRO', 'NOW', 'NOT', 'DEG', 'NIL']
+Predicted tags: ['PRO', 'NOW', 'NOT', 'IST', 'NIL']
+
+Sentence: That she behaves this way is odd .
+Correct tags: ['SUB', 'PER', 'ENS', 'PRX', 'CON', 'NOW', 'IST', 'NIL']
+Predicted tags: ['SUB', 'PRO', 'ENS', 'PRX', 'CON', 'NOW', 'IST', 'NIL']
+
+Sentence: What he did was n't wrong .
+Correct tags: ['DIS', 'PRO', 'EPS', 'PST', 'NOT', 'IST', 'NIL']
+Predicted tags: ['EMP', 'PRO', 'PST', 'PST', 'NOT', 'IST', 'NIL']
+
+Sentence: Mike entered the room , took off the coat and put in on the chair .
+Correct tags: ['PER', 'EPS', 'DEF', 'CON', 'COO', 'EPS', 'REL', 'DEF', 'CON', 'COO', 'EPS', 'PRO', 'REL', 'DEF', 'CON', 'NIL']
+Predicted tags: ['PER', 'EPS', 'DEF', 'CON', 'COO', 'EPS', 'REL', 'DEF', 'CON', 'COO', 'EPS', 'REL', 'REL', 'DEF', 'CON', 'NIL']
+
+Sentence: I 'm Tom~Hunter .
+Correct tags: ['PRO', 'EQU', 'PER', 'NIL']
+Predicted tags: ['PRO', 'ENS', 'PER', 'NIL']
+
+Sentence: I always get an A in math .
+Correct tags: ['PRO', 'AND', 'EXS', 'DIS', 'SCO', 'REL', 'CON', 'NIL']
+Predicted tags: ['PRO', 'AND', 'ENS', 'DIS', 'SCO', 'REL', 'CON', 'NIL']
+
+Sentence: Who was Woodrow~Wilson 's First~Lady ?
+Correct tags: ['QUE', 'EPS', 'PER', 'HAS', 'ROL', 'QUE']
+Predicted tags: ['QUE', 'EPS', 'PER', 'HAS', 'HAP', 'QUE']
+
+Sentence: The American people elected Mr Clinton President .
+Correct tags: ['DEF', 'GPO', 'CON', 'PER', 'ROL', 'PER', 'CON', 'NIL']
+Predicted tags: ['DEF', 'GPO', 'CON', 'EPS', 'ROL', 'PER', 'CON', 'NIL']
+
+Sentence: I am Antonio .
+Correct tags: ['PRO', 'EQU', 'PER', 'NIL']
+Predicted tags: ['PRO', 'ENS', 'PER', 'NIL']
+
+Sentence: She is leaving at nine~o'clock .
+Correct tags: ['PRO', 'FUT', 'EXG', 'REL', 'CLO', 'NIL']
+Predicted tags: ['PRO', 'NOW', 'EXG', 'REL', 'CLO', 'NIL']
+
+Sentence: That boy is Tony , is n't he ?
+Correct tags: ['DST', 'CON', 'ENS', 'PER', 'NIL', 'ENS', 'NOT', 'PRO', 'QUE']
+Predicted tags: ['DST', 'CON', 'ENS', 'PER', 'NIL', 'NOW', 'NOT', 'PRO', 'QUE']
+
+Sentence: You ca n't tickle yourself .
+Correct tags: ['AND', 'POS', 'NOT', 'EXS', 'REF', 'NIL']
+Predicted tags: ['PRO', 'POS', 'NOT', 'EXS', 'REF', 'NIL']
+
+Sentence: I 'm gonna shoot him .
+Correct tags: ['PRO', 'NIL', 'FUT', 'EXS', 'PRO', 'NIL']
+Predicted tags: ['PRO', 'ENS', 'FUT', 'EXS', 'PRO', 'NIL']
+
+Sentence: I ca n't get up .
+Correct tags: ['PRO', 'POS', 'NOT', 'ENS', 'REL', 'NIL']
+Predicted tags: ['PRO', 'POS', 'NOT', 'EXS', 'REL', 'NIL']
+
+Sentence: Oh , I was ill .
+Correct tags: ['ITJ', 'NIL', 'PRO', 'PST', 'IST', 'NIL']
+Predicted tags: ['CON', 'NIL', 'PRO', 'PST', 'IST', 'NIL']
+
+Sentence: In case it rains , I wo n't go .
+Correct tags: ['IMP', 'NIL', 'NIL', 'EFS', 'NIL', 'PRO', 'FUT', 'NOT', 'EXS', 'NIL']
+Predicted tags: ['IMP', 'NIL', 'NIL', 'ENS', 'NIL', 'PRO', 'FUT', 'NOT', 'EXS', 'NIL']
+
+Sentence: Tom plays the drums as~well~as the organ .
+Correct tags: ['PER', 'ENS', 'DEF', 'CON', 'AND', 'DEF', 'CON', 'NIL']
+Predicted tags: ['PER', 'ENS', 'DEF', 'CON', 'REL', 'DEF', 'CON', 'NIL']
+
+Sentence: Tom has big eyes .
+Correct tags: ['PER', 'ENS', 'IST', 'CON', 'NIL']
+Predicted tags: ['PER', 'ENS', 'DEG', 'CON', 'NIL']
+
+Sentence: I 'm now unarmed .
+Correct tags: ['PRO', 'NIL', 'NOW', 'IST', 'NIL']
+Predicted tags: ['PRO', 'NOW', 'NOW', 'IST', 'NIL']
+
+Sentence: Is this tea~set complete ?
+Correct tags: ['NOW', 'PRX', 'CON', 'IST', 'QUE']
+Predicted tags: ['ENS', 'PRX', 'CON', 'IST', 'QUE']
+
+Sentence: Our team defeated our opponent 5-4 .
+Correct tags: ['HAS', 'CON', 'EPS', 'HAS', 'CON', 'SCO', 'NIL']
+Predicted tags: ['HAS', 'CON', 'EPS', 'HAS', 'ROL', 'SCO', 'NIL']
+
+Sentence: They appointed him as a director .
+Correct tags: ['PRO', 'EPS', 'PRO', 'REL', 'DIS', 'CON', 'NIL']
+Predicted tags: ['PRO', 'EPS', 'PRO', 'REL', 'DIS', 'ROL', 'NIL']
+
+Sentence: It was Mike that telephoned the police .
+Correct tags: ['NIL', 'EQU', 'PER', 'AND', 'EPS', 'DEF', 'CON', 'NIL']
+Predicted tags: ['PRO', 'EPS', 'PER', 'AND', 'EPS', 'DEF', 'CON', 'NIL']
+
+Sentence: The small~intestine is about seven meters long .
+Correct tags: ['AND', 'CON', 'NIL', 'APX', 'QUC', 'UOM', 'DEG', 'NIL']
+Predicted tags: ['DEF', 'CON', 'NOW', 'APX', 'QUC', 'UOM', 'DEG', 'NIL']
+
+Sentence: I cooked her dinner .
+Correct tags: ['PRO', 'EPS', 'PRO', 'CON', 'NIL']
+Predicted tags: ['PRO', 'EPS', 'HAS', 'CON', 'NIL']
+
+Sentence: She is buying a toy for her child .
+Correct tags: ['PRO', 'NOW', 'EXG', 'DIS', 'CON', 'REL', 'HAS', 'ROL', 'NIL']
+Predicted tags: ['PRO', 'NOW', 'EXG', 'DIS', 'CON', 'REL', 'HAS', 'CON', 'NIL']
+
+Sentence: Tom is in the kitchen microwaving popcorn .
+Correct tags: ['PER', 'NOW', 'REL', 'DEF', 'CON', 'EXG', 'CON', 'NIL']
+Predicted tags: ['PER', 'ENS', 'REL', 'DEF', 'CON', 'EXG', 'CON', 'NIL']
+
+Sentence: Tom is going to pick me up at 2:30 .
+Correct tags: ['PER', 'NIL', 'FUT', 'NIL', 'EXS', 'PRO', 'REL', 'REL', 'CLO', 'NIL']
+Predicted tags: ['PER', 'NOW', 'FUT', 'NIL', 'EXS', 'PRO', 'REL', 'REL', 'CLO', 'NIL']
+
+Sentence: Magdalena and Lech are thirteen .
+Correct tags: ['PER', 'AND', 'PER', 'NOW', 'QUC', 'NIL']
+Predicted tags: ['PER', 'GRP', 'PER', 'NOW', 'QUC', 'NIL']
+
+Sentence: Which animal is small ?
+Correct tags: ['QUE', 'CON', 'NOW', 'IST', 'QUE']
+Predicted tags: ['QUE', 'CON', 'NOW', 'DEG', 'QUE']
+
+Sentence: I 'm fed~up with his long talks .
+Correct tags: ['PRO', 'NOW', 'IST', 'REL', 'HAS', 'IST', 'CON', 'NIL']
+Predicted tags: ['PRO', 'NOW', 'IST', 'REL', 'HAS', 'DEG', 'CON', 'NIL']
+
+Sentence: It was half-past~two in the morning .
+Correct tags: ['NIL', 'PST', 'CLO', 'REL', 'DEF', 'CON', 'NIL']
+Predicted tags: ['PRO', 'PST', 'CLO', 'REL', 'DEF', 'CON', 'NIL']
+
+Sentence: Tom~Online revenues have risen by 38.5 % .
+Correct tags: ['ORG', 'CON', 'NOW', 'EXT', 'REL', 'QUC', 'UOM', 'NIL']
+Predicted tags: ['PER', 'CON', 'NOW', 'EXT', 'REL', 'QUC', 'UOM', 'NIL']
+
+Sentence: He 's a grouch .
+Correct tags: ['PRO', 'NOW', 'DIS', 'ROL', 'NIL']
+Predicted tags: ['PRO', 'ENS', 'DIS', 'ROL', 'NIL']
+
+Sentence: My wife 's going to kill me .
+Correct tags: ['HAS', 'ROL', 'FUT', 'NIL', 'NIL', 'EXS', 'PRO', 'NIL']
+Predicted tags: ['HAS', 'ROL', 'FUT', 'FUT', 'NIL', 'EXS', 'PRO', 'NIL']
+
+Sentence: They drank two bottles of wine .
+Correct tags: ['PRO', 'EPS', 'QUC', 'CON', 'REL', 'CON', 'NIL']
+Predicted tags: ['PRO', 'EPS', 'QUC', 'CON', 'AND', 'CON', 'NIL']
+
+Sentence: How beautiful she is !
+Correct tags: ['EMP', 'IST', 'PRO', 'NOW', 'EMP']
+Predicted tags: ['EMP', 'IST', 'PRO', 'ENS', 'EMP']
+
+Sentence: America did away with slavery in 1863 .
+Correct tags: ['GPE', 'EPS', 'IST', 'REL', 'CON', 'REL', 'YOC', 'NIL']
+Predicted tags: ['GPE', 'PST', 'IST', 'REL', 'CON', 'REL', 'YOC', 'NIL']
+
+Sentence: An Alzheimer patient was in Michigan for an assisted~suicide .
+Correct tags: ['DIS', 'CON', 'ROL', 'EPS', 'REL', 'GPE', 'REL', 'DIS', 'CON', 'NIL']
+Predicted tags: ['DIS', 'GPO', 'ROL', 'EPS', 'REL', 'GPE', 'REL', 'DIS', 'CON', 'NIL']
+
+Sentence: Tom has been teaching us French .
+Correct tags: ['PER', 'NOW', 'PRG', 'EXG', 'PRO', 'CON', 'NIL']
+Predicted tags: ['PER', 'NOW', 'PFT', 'EXG', 'PRO', 'CON', 'NIL']
+
+Sentence: My watch is five minutes fast .
+Correct tags: ['HAS', 'CON', 'NOW', 'QUC', 'UOM', 'IST', 'NIL']
+Predicted tags: ['HAS', 'CON', 'NOW', 'QUC', 'UOM', 'DEG', 'NIL']
+
+Sentence: I was born on the 18th of March 1994 .
+Correct tags: ['PRO', 'PST', 'EXS', 'REL', 'DEF', 'DOM', 'EQU', 'MOY', 'YOC', 'NIL']
+Predicted tags: ['PRO', 'PST', 'EXS', 'REL', 'DEF', 'DOM', 'REL', 'MOY', 'YOC', 'NIL']
+
+Sentence: The United~Nations~Charter was signed in 1945 .
+Correct tags: ['DEF', 'ART', 'PST', 'EXS', 'REL', 'YOC', 'NIL']
+Predicted tags: ['DEF', 'GPE', 'PST', 'EXS', 'REL', 'YOC', 'NIL']
+
+Sentence: What 's the square~root of 100 ?
+Correct tags: ['QUE', 'EXS', 'DEF', 'CON', 'REL', 'QUC', 'QUE']
+Predicted tags: ['QUE', 'ENS', 'DEF', 'CON', 'REL', 'QUC', 'QUE']
+
+Sentence: I married on the 1st of June .
+Correct tags: ['PRO', 'EPS', 'REL', 'DEF', 'DOM', 'EQU', 'MOY', 'NIL']
+Predicted tags: ['PRO', 'EPS', 'REL', 'DEF', 'DOM', 'REL', 'MOY', 'NIL']
+
+Sentence: He 's one of my in-laws .
+Correct tags: ['PRO', 'ENS', 'CON', 'REL', 'HAS', 'ROL', 'NIL']
+Predicted tags: ['PRO', 'NOW', 'QUC', 'REL', 'HAS', 'IST', 'NIL']
+
+Sentence: What year was President Kennedy killed ?
+Correct tags: ['QUE', 'CON', 'PST', 'ROL', 'PER', 'EXS', 'QUE']
+Predicted tags: ['QUE', 'UOM', 'PST', 'ROL', 'PER', 'EXS', 'QUE']
+
+Sentence: The table was loaded with fruit .
+Correct tags: ['DEF', 'CON', 'PST', 'IST', 'REL', 'CON', 'NIL']
+Predicted tags: ['DEF', 'CON', 'PST', 'EXS', 'REL', 'CON', 'NIL']
+
+Sentence: A typical Bavarian breakfast consists of white sausage , wheat~beer and pretzels .
+Correct tags: ['AND', 'IST', 'GPO', 'CON', 'ENS', 'REL', 'COL', 'CON', 'REL', 'CON', 'GRP', 'CON', 'NIL']
+Predicted tags: ['DIS', 'IST', 'GPO', 'CON', 'ENS', 'REL', 'COL', 'CON', 'REL', 'CON', 'GRP', 'CON', 'NIL']
+
+Sentence: He is anything~but a liar .
+Correct tags: ['PRO', 'ENS', 'NOT', 'DIS', 'ROL', 'NIL']
+Predicted tags: ['PRO', 'NOW', 'NOT', 'DIS', 'ROL', 'NIL']
+
+Sentence: It 's her favorite Italian word .
+Correct tags: ['PRO', 'ENS', 'HAS', 'TOP', 'CON', 'CON', 'NIL']
+Predicted tags: ['PRO', 'ENS', 'HAS', 'TOP', 'GPO', 'CON', 'NIL']
+
+Sentence: The old man freed the little fox from the trap .
+Correct tags: ['DEF', 'DEG', 'CON', 'EPS', 'DEF', 'DEG', 'CON', 'REL', 'DEF', 'CON', 'NIL']
+Predicted tags: ['DEF', 'DEG', 'CON', 'EPS', 'DEF', 'IST', 'CON', 'REL', 'DEF', 'CON', 'NIL']
+
+Sentence: My watch is ten minutes fast .
+Correct tags: ['HAS', 'CON', 'NOW', 'QUC', 'UOM', 'IST', 'NIL']
+Predicted tags: ['HAS', 'CON', 'NOW', 'QUC', 'UOM', 'DEG', 'NIL']
+
+Sentence: I got my bicycle repaired .
+Correct tags: ['PRO', 'EPS', 'HAS', 'CON', 'EXS', 'NIL']
+Predicted tags: ['PRO', 'PST', 'HAS', 'CON', 'EXS', 'NIL']
+
+Sentence: Tom crawled into bed and pulled the covers over himself .
+Correct tags: ['PER', 'EPS', 'REL', 'CON', 'COO', 'EPS', 'DEF', 'CON', 'REL', 'PRO', 'NIL']
+Predicted tags: ['PER', 'EPS', 'REL', 'CON', 'COO', 'EPS', 'DEF', 'CON', 'REL', 'REF', 'NIL']
+
+Sentence: It 's eight-thirty .
+Correct tags: ['NIL', 'NOW', 'CLO', 'NIL']
+Predicted tags: ['PRO', 'NOW', 'CLO', 'NIL']
+
+Sentence: A top-class shearer can shear up~to 150 sheep in one day .
+Correct tags: ['AND', 'IST', 'ROL', 'POS', 'EXS', 'TOP', 'QUC', 'CON', 'REL', 'QUC', 'CON', 'NIL']
+Predicted tags: ['DIS', 'IST', 'ROL', 'POS', 'EXS', 'TOP', 'QUC', 'CON', 'REL', 'QUC', 'CON', 'NIL']
+
+Sentence: A cherry~tree grows in a garden .
+Correct tags: ['DIS', 'CON', 'EXS', 'REL', 'DIS', 'CON', 'NIL']
+Predicted tags: ['DIS', 'CON', 'ENS', 'REL', 'DIS', 'CON', 'NIL']
+
+Sentence: What is the name of the head of the Australian Federal~Government ?
+Correct tags: ['QUE', 'ENS', 'DEF', 'CON', 'REL', 'DEF', 'ROL', 'REL', 'DEF', 'GPO', 'CON', 'QUE']
+Predicted tags: ['QUE', 'ENS', 'DEF', 'CON', 'REL', 'DEF', 'CON', 'REL', 'DEF', 'GPO', 'CON', 'QUE']
+
+Sentence: What city is the Liberty~Bell currently located in ?
+Correct tags: ['QUE', 'CON', 'NOW', 'DEF', 'ART', 'NOW', 'IST', 'REL', 'QUE']
+Predicted tags: ['QUE', 'CON', 'ENS', 'DEF', 'ART', 'NOW', 'IST', 'REL', 'QUE']
+
+Sentence: The Swallows are ahead 4~to~1 !
+Correct tags: ['DEF', 'ORG', 'NOW', 'IST', 'SCO', 'NIL']
+Predicted tags: ['DEF', 'ORG', 'NOW', 'IST', 'SCO', 'EMP']
+
+Sentence: Your O's resemble your A's .
+Correct tags: ['HAS', 'CON', 'ENS', 'HAS', 'CON', 'NIL']
+Predicted tags: ['HAS', 'CON', 'ENS', 'HAS', 'DIS', 'NIL']
+
+Sentence: I had a tooth pulled .
+Correct tags: ['PRO', 'PST', 'DIS', 'CON', 'EXT', 'NIL']
+Predicted tags: ['PRO', 'PST', 'DIS', 'CON', 'EPS', 'NIL']
+
+Sentence: This watch is ten minutes fast .
+Correct tags: ['PRX', 'CON', 'NOW', 'QUC', 'UOM', 'IST', 'NIL']
+Predicted tags: ['PRX', 'CON', 'NOW', 'QUC', 'UOM', 'DEG', 'NIL']
+
+Sentence: I 'm going to puke .
+Correct tags: ['PRO', 'NIL', 'FUT', 'NIL', 'EXS', 'NIL']
+Predicted tags: ['PRO', 'NOW', 'EXG', 'NIL', 'EXS', 'NIL']
+
+Sentence: A man of wealth has to pay a lot of income~tax .
+Correct tags: ['AND', 'CON', 'REL', 'CON', 'NEC', 'NIL', 'EXS', 'DIS', 'QUV', 'REL', 'CON', 'NIL']
+Predicted tags: ['DIS', 'CON', 'REL', 'CON', 'NEC', 'NIL', 'EXS', 'DIS', 'QUV', 'REL', 'CON', 'NIL']
+
+Sentence: A book can excite .
+Correct tags: ['AND', 'CON', 'POS', 'EXS', 'NIL']
+Predicted tags: ['DIS', 'CON', 'POS', 'EXS', 'NIL']
+
+Sentence: The train pulled out two hours ago .
+Correct tags: ['DEF', 'CON', 'EPS', 'REF', 'QUC', 'UOM', 'PST', 'NIL']
+Predicted tags: ['DEF', 'CON', 'EPS', 'APX', 'QUC', 'UOM', 'PST', 'NIL']
+
+Sentence: Altogether 15 people were rescued by police .
+Correct tags: ['EQU', 'QUC', 'CON', 'PST', 'EXS', 'REL', 'CON', 'NIL']
+Predicted tags: ['PER', 'QUC', 'CON', 'PST', 'EXS', 'REL', 'CON', 'NIL']
+
+Sentence: They elected John the captain of the team .
+Correct tags: ['PRO', 'EPS', 'PER', 'DEF', 'CON', 'REL', 'DEF', 'CON', 'NIL']
+Predicted tags: ['PRO', 'EPS', 'PER', 'DEF', 'ROL', 'REL', 'DEF', 'CON', 'NIL']
+
+Sentence: One , three , five , seven and nine are odd numbers .
+Correct tags: ['CON', 'REL', 'CON', 'REL', 'CON', 'REL', 'CON', 'GRP', 'CON', 'ENS', 'IST', 'CON', 'NIL']
+Predicted tags: ['QUC', 'REL', 'QUC', 'REL', 'CON', 'REL', 'CON', 'GRP', 'CON', 'ENS', 'IST', 'CON', 'NIL']
+
+Sentence: He is anything~but a gentleman .
+Correct tags: ['PRO', 'ENS', 'NOT', 'DIS', 'CON', 'NIL']
+Predicted tags: ['PRO', 'NOW', 'NOT', 'DIS', 'CON', 'NIL']
+
+Sentence: Neither he nor I speak Spanish .
+Correct tags: ['NOT', 'PRO', 'NOT', 'PRO', 'EXS', 'CON', 'NIL']
+Predicted tags: ['NOT', 'PRO', 'NOT', 'PRO', 'ENS', 'CON', 'NIL']
+
+Sentence: She 's at~most 20 years old .
+Correct tags: ['PRO', 'NOW', 'TOP', 'QUC', 'UOM', 'DEG', 'NIL']
+Predicted tags: ['PRO', 'NOW', 'NOT', 'QUC', 'UOM', 'DEG', 'NIL']
+
+Sentence: He gave her mouth-to-mouth~resuscitation .
+Correct tags: ['PRO', 'EPS', 'PRO', 'CON', 'NIL']
+Predicted tags: ['PRO', 'EPS', 'HAS', 'CON', 'NIL']
+
+Sentence: She 's a knockout .
+Correct tags: ['PRO', 'NOW', 'DIS', 'ROL', 'NIL']
+Predicted tags: ['PRO', 'ENS', 'DIS', 'ROL', 'NIL']
+
+Sentence: We have lunch at midday .
+Correct tags: ['PRO', 'EFS', 'CON', 'REL', 'CLO', 'NIL']
+Predicted tags: ['PRO', 'ENS', 'CON', 'REL', 'CLO', 'NIL']
+
+Sentence: My clock is two minutes fast .
+Correct tags: ['HAS', 'CON', 'NOW', 'QUC', 'UOM', 'IST', 'NIL']
+Predicted tags: ['HAS', 'CON', 'NOW', 'QUC', 'UOM', 'DEG', 'NIL']
+
+Sentence: Capt. Scott reached Scott~Island in December 1902 .
+Correct tags: ['ROL', 'PER', 'EPS', 'GPE', 'REL', 'MOY', 'YOC', 'NIL']
+Predicted tags: ['FUT', 'PER', 'EPS', 'PER', 'REL', 'MOY', 'YOC', 'NIL']
+
+Sentence: How small your cat is !
+Correct tags: ['EMP', 'DEG', 'HAS', 'CON', 'NOW', 'EMP']
+Predicted tags: ['EMP', 'DEG', 'HAS', 'CON', 'ENS', 'EMP']
+
+Sentence: My native~language is Japanese .
+Correct tags: ['HAS', 'CON', 'ENS', 'CON', 'NIL']
+Predicted tags: ['HAS', 'CON', 'ENS', 'GPO', 'NIL']
+
+Sentence: Bob bragged about his big boat .
+Correct tags: ['PER', 'EPS', 'REL', 'HAS', 'IST', 'CON', 'NIL']
+Predicted tags: ['PER', 'EPS', 'REL', 'HAS', 'DEG', 'CON', 'NIL']
+
+Sentence: He , as~well~as his sister , are invited to the party .
+Correct tags: ['PRO', 'GRP', 'ALT', 'HAS', 'ROL', 'EQU', 'NOW', 'EXS', 'REL', 'DEF', 'CON', 'NIL']
+Predicted tags: ['PRO', 'NIL', 'ALT', 'HAS', 'ROL', 'NIL', 'NOW', 'EXS', 'REL', 'DEF', 'CON', 'NIL']
+
+Sentence: A shipwreck took place in the North~Sea .
+Correct tags: ['DIS', 'CON', 'EPS', 'NIL', 'REL', 'DEF', 'GEO', 'NIL']
+Predicted tags: ['DIS', 'CON', 'EPS', 'NIL', 'REL', 'DEF', 'GPE', 'NIL']
+
+Sentence: What ship did the oil~tanker " New~World " crash into ?
+Correct tags: ['QUE', 'CON', 'PST', 'DEF', 'CON', 'NIL', 'NTH', 'NIL', 'EXS', 'REL', 'QUE']
+Predicted tags: ['QUE', 'CON', 'PST', 'DEF', 'CON', 'NIL', 'ART', 'NIL', 'EXS', 'REL', 'QUE']
+
+Sentence: Which countries were visited by first~lady Hillary~Clinton ?
+Correct tags: ['QUE', 'CON', 'PST', 'EXS', 'REL', 'ROL', 'PER', 'QUE']
+Predicted tags: ['QUE', 'CON', 'PST', 'EXS', 'REL', 'QUC', 'PER', 'QUE']
+
+Sentence: I 'm travelling to Paris tomorrow .
+Correct tags: ['PRO', 'FUT', 'EXG', 'REL', 'GPE', 'FUT', 'NIL']
+Predicted tags: ['PRO', 'NOW', 'EXG', 'REL', 'GPE', 'FUT', 'NIL']
+
+Sentence: What is two plus two ?
+Correct tags: ['QUE', 'EXS', 'QUC', 'CON', 'QUC', 'QUE']
+Predicted tags: ['QUE', 'ENS', 'QUC', 'CON', 'QUC', 'QUE']
+
+Sentence: Tom was very angry with Mary and it took her a long time to placate him .
+Correct tags: ['PER', 'PST', 'INT', 'IST', 'REL', 'PER', 'AND', 'NIL', 'EPS', 'PRO', 'DIS', 'DEG', 'CON', 'NIL', 'EXS', 'PRO', 'NIL']
+Predicted tags: ['PER', 'PST', 'INT', 'IST', 'REL', 'PER', 'COO', 'NIL', 'EPS', 'PRO', 'DIS', 'DEG', 'CON', 'NIL', 'EXS', 'PRO', 'NIL']
+
+Sentence: Whenever I visited the island , I was impressed with the beauty of nature .
+Correct tags: ['IMP', 'PRO', 'EPS', 'DEF', 'CON', 'NIL', 'PRO', 'PST', 'IST', 'REL', 'DEF', 'CON', 'REL', 'CON', 'NIL']
+Predicted tags: ['IMP', 'PRO', 'EPS', 'DEF', 'CON', 'NIL', 'PRO', 'PST', 'IST', 'REL', 'DEF', 'ROL', 'REL', 'CON', 'NIL']
+
+Sentence: Marian and Harry have long hair .
+Correct tags: ['PER', 'AND', 'PER', 'ENS', 'DEG', 'CON', 'NIL']
+Predicted tags: ['PER', 'GRP', 'PER', 'ENS', 'DEG', 'CON', 'NIL']
+
+Sentence: Italy beat Kazakhstan .
+Correct tags: ['ORG', 'EPS', 'ORG', 'NIL']
+Predicted tags: ['GPE', 'EPS', 'ORG', 'NIL']
+
+Sentence: We elected him mayor .
+Correct tags: ['PRO', 'EPS', 'PRO', 'ROL', 'NIL']
+Predicted tags: ['PRO', 'EPS', 'PRO', 'CON', 'NIL']
+
+Sentence: Some of the books that he has are English novels .
+Correct tags: ['DIS', 'REL', 'DEF', 'CON', 'AND', 'PRO', 'ENS', 'ENS', 'CON', 'CON', 'NIL']
+Predicted tags: ['DIS', 'REL', 'DEF', 'CON', 'AND', 'PRO', 'ENS', 'ENS', 'GPO', 'CON', 'NIL']
+
+Sentence: You should go to the dentist and have that tooth pulled out .
+Correct tags: ['PRO', 'NEC', 'EXS', 'REL', 'DEF', 'ROL', 'AND', 'FUT', 'DST', 'CON', 'EXS', 'REL', 'NIL']
+Predicted tags: ['PRO', 'NEC', 'EXS', 'REL', 'DEF', 'ROL', 'COO', 'FUT', 'DST', 'CON', 'EPS', 'REL', 'NIL']
+
+Sentence: Canada beat USA .
+Correct tags: ['ORG', 'EPS', 'ORG', 'NIL']
+Predicted tags: ['GPE', 'EPS', 'ORG', 'NIL']
+
+Sentence: Dan and Linda adopted a young boy from Cambodia .
+Correct tags: ['PER', 'GRP', 'PER', 'EPS', 'DIS', 'IST', 'CON', 'REL', 'GPE', 'NIL']
+Predicted tags: ['PER', 'GRP', 'PER', 'EPS', 'DIS', 'DEG', 'CON', 'REL', 'GPE', 'NIL']
+
+Sentence: It 's not your fault , it 's Alison 's .
+Correct tags: ['PRO', 'ENS', 'NOT', 'HAS', 'CON', 'BUT', 'PRO', 'ENS', 'PER', 'HAS', 'NIL']
+Predicted tags: ['PRO', 'ENS', 'NOT', 'HAS', 'CON', 'NIL', 'PRO', 'ENS', 'PER', 'HAS', 'NIL']
+
+Sentence: Tom 's my cousin .
+Correct tags: ['PER', 'NOW', 'HAS', 'ROL', 'NIL']
+Predicted tags: ['PER', 'ENS', 'HAS', 'ROL', 'NIL']
+
+Sentence: The score is one~all .
+Correct tags: ['DEF', 'CON', 'ENS', 'SCO', 'NIL']
+Predicted tags: ['DEF', 'CON', 'ENS', 'QUC', 'NIL']
+
+Sentence: I 'm a tennis~player .
+Correct tags: ['PRO', 'NOW', 'DIS', 'ROL', 'NIL']
+Predicted tags: ['PRO', 'ENS', 'DIS', 'ROL', 'NIL']
+
+Sentence: I 'm a friend of Tom and Mary 's .
+Correct tags: ['PRO', 'ENS', 'DIS', 'ROL', 'REL', 'PER', 'GRP', 'PER', 'NIL', 'NIL']
+Predicted tags: ['PRO', 'ENS', 'DIS', 'ROL', 'REL', 'PER', 'GRP', 'PER', 'HAS', 'NIL']
+
+Sentence: She was appointed chairperson .
+Correct tags: ['PRO', 'PST', 'EPS', 'CON', 'NIL']
+Predicted tags: ['PRO', 'PST', 'EXS', 'CON', 'NIL']
+
+Sentence: The list of known errors in this specification is available at http://www.w3.org/XML/xml-19980210-errata .
+Correct tags: ['DEF', 'CON', 'REL', 'EXT', 'CON', 'REL', 'PRX', 'CON', 'NOW', 'IST', 'REL', 'CTC', 'NIL']
+Predicted tags: ['DEF', 'CON', 'REL', 'IST', 'CON', 'REL', 'PRX', 'CON', 'NOW', 'IST', 'REL', 'CTC', 'NIL']
+
+Sentence: How high is Mt.~Hood ?
+Correct tags: ['QUE', 'IST', 'NOW', 'GEO', 'QUE']
+Predicted tags: ['QUE', 'DEG', 'NOW', 'GEO', 'QUE']
+
+Sentence: In India , the cow is a sacred animal .
+Correct tags: ['REL', 'GPE', 'NIL', 'AND', 'CON', 'ENS', 'DIS', 'IST', 'CON', 'NIL']
+Predicted tags: ['REL', 'GPE', 'NIL', 'DEF', 'CON', 'ENS', 'DIS', 'IST', 'CON', 'NIL']
+
+Sentence: The pond is 3 meters deep .
+Correct tags: ['DEF', 'CON', 'NOW', 'QUC', 'UOM', 'SST', 'NIL']
+Predicted tags: ['DEF', 'CON', 'NOW', 'QUC', 'UOM', 'DEG', 'NIL']
+
+Sentence: The birch has white bark .
+Correct tags: ['AND', 'CON', 'EXS', 'COL', 'CON', 'NIL']
+Predicted tags: ['DEF', 'CON', 'EXS', 'COL', 'CON', 'NIL']
+
+Sentence: How high is Mount~Kinabalu ?
+Correct tags: ['QUE', 'DEG', 'ENS', 'GEO', 'QUE']
+Predicted tags: ['QUE', 'DEG', 'NOW', 'GEO', 'QUE']
+
+Sentence: Five plus two equals seven .
+Correct tags: ['QUC', 'CON', 'QUC', 'ENS', 'QUC', 'NIL']
+Predicted tags: ['QUC', 'CON', 'QUC', 'EXS', 'QUC', 'NIL']
+
+Sentence: One euro is one-point-five dollars .
+Correct tags: ['QUC', 'UOM', 'ENS', 'QUC', 'UOM', 'NIL']
+Predicted tags: ['QUC', 'UOM', 'NOW', 'QUC', 'UOM', 'NIL']
+
+Sentence: The air we breathe consists of oxygen and nitrogen .
+Correct tags: ['DEF', 'CON', 'DIS', 'ENS', 'ENS', 'REL', 'CON', 'GRP', 'CON', 'NIL']
+Predicted tags: ['DEF', 'CON', 'PRO', 'ENS', 'ENS', 'REL', 'CON', 'GRP', 'CON', 'NIL']
+
+Sentence: Millie is n't drinking water .
+Correct tags: ['PER', 'NOW', 'NOT', 'EXS', 'CON', 'NIL']
+Predicted tags: ['PER', 'NOW', 'NOT', 'EXG', 'CON', 'NIL']
+
+Sentence: You can not tame a wolf .
+Correct tags: ['AND', 'POS', 'NOT', 'EXS', 'DIS', 'CON', 'NIL']
+Predicted tags: ['PRO', 'POS', 'NOT', 'EXS', 'DIS', 'CON', 'NIL']
+
+Sentence: Tom is n't a bad coach .
+Correct tags: ['PER', 'NOW', 'NOT', 'DIS', 'IST', 'ROL', 'NIL']
+Predicted tags: ['PER', 'ENS', 'NOT', 'DIS', 'IST', 'ROL', 'NIL']
+
+Sentence: In August , I 'm going to Japan with my friends .
+Correct tags: ['REL', 'MOY', 'NIL', 'PRO', 'FUT', 'EXG', 'REL', 'GPE', 'REL', 'HAS', 'ROL', 'NIL']
+Predicted tags: ['REL', 'MOY', 'NIL', 'PRO', 'NOW', 'EXG', 'REL', 'GPE', 'REL', 'HAS', 'ROL', 'NIL']
+
+Sentence: A banana is yellow .
+Correct tags: ['AND', 'CON', 'NOW', 'COL', 'NIL']
+Predicted tags: ['DIS', 'CON', 'NOW', 'COL', 'NIL']
+
+Sentence: The right arm of the Statue~of~Liberty is 42 feet long .
+Correct tags: ['DEF', 'IST', 'CON', 'REL', 'DEF', 'ART', 'NOW', 'QUC', 'UOM', 'IST', 'NIL']
+Predicted tags: ['DEF', 'IST', 'CON', 'REL', 'DEF', 'ART', 'NOW', 'QUC', 'UOM', 'DEG', 'NIL']
+
+Sentence: It 's raining again !
+Correct tags: ['NIL', 'NOW', 'EXG', 'ALT', 'NIL']
+Predicted tags: ['NIL', 'NOW', 'EXG', 'ALT', 'EMP']
+
+Sentence: Tom was sent to Coventry .
+Correct tags: ['PER', 'PST', 'EXS', 'REL', 'NIL', 'NIL']
+Predicted tags: ['PER', 'PST', 'EXS', 'REL', 'MOY', 'NIL']
+
+Sentence: She has never danced with him .
+Correct tags: ['PRO', 'NOW', 'NOT', 'EXS', 'REL', 'PRO', 'NIL']
+Predicted tags: ['PRO', 'NOW', 'NOT', 'EXT', 'REL', 'PRO', 'NIL']
+
+Sentence: Tom picked up the saltshaker and salted his eggs .
+Correct tags: ['PER', 'EPS', 'REL', 'DEF', 'CON', 'AND', 'EPS', 'HAS', 'CON', 'NIL']
+Predicted tags: ['PER', 'EPS', 'REL', 'DEF', 'CON', 'COO', 'EPS', 'HAS', 'CON', 'NIL']
+
+Sentence: I am tall .
+Correct tags: ['PRO', 'NOW', 'IST', 'NIL']
+Predicted tags: ['PRO', 'NOW', 'DEG', 'NIL']
+
+Sentence: I brought you red roses .
+Correct tags: ['PRO', 'EPS', 'DIS', 'COL', 'CON', 'NIL']
+Predicted tags: ['PRO', 'EPS', 'PRO', 'COL', 'CON', 'NIL']
+
+Sentence: The elephant is grey .
+Correct tags: ['AND', 'CON', 'NOW', 'COL', 'NIL']
+Predicted tags: ['DEF', 'CON', 'NOW', 'COL', 'NIL']
+
+Sentence: Which baseball star stole 130 bases in 1982 ?
+Correct tags: ['QUE', 'CON', 'ROL', 'EPS', 'QUC', 'CON', 'REL', 'YOC', 'QUE']
+Predicted tags: ['QUE', 'CON', 'CON', 'EPS', 'QUC', 'CON', 'REL', 'YOC', 'QUE']
+
+Sentence: I am very , very sorry .
+Correct tags: ['PRO', 'NOW', 'EMP', 'NIL', 'INT', 'IST', 'NIL']
+Predicted tags: ['PRO', 'NOW', 'INT', 'NIL', 'INT', 'IST', 'NIL']
+
+Sentence: Mr Hawk is a kind gentleman .
+Correct tags: ['ROL', 'PER', 'ENS', 'DIS', 'IST', 'ROL', 'NIL']
+Predicted tags: ['ROL', 'PER', 'ENS', 'DIS', 'IST', 'CON', 'NIL']
+
+Sentence: A cat abhors a vacuum .
+Correct tags: ['AND', 'CON', 'ENS', 'DIS', 'CON', 'NIL']
+Predicted tags: ['DIS', 'CON', 'ENS', 'DIS', 'CON', 'NIL']
+
+Sentence: The wall is two meters thick .
+Correct tags: ['DEF', 'CON', 'NOW', 'QUC', 'UOM', 'IST', 'NIL']
+Predicted tags: ['DEF', 'CON', 'NOW', 'QUC', 'UOM', 'DEG', 'NIL']
+
+Sentence: What award did director Quentin~Tarantino 's film , " Pulp~Fiction " , win in the Cannes~Film~Festival ?
+Correct tags: ['QUE', 'CON', 'PST', 'ROL', 'PER', 'HAS', 'CON', 'REL', 'NIL', 'ART', 'NIL', 'NIL', 'EXS', 'REL', 'DEF', 'HAP', 'QUE']
+Predicted tags: ['QUE', 'CON', 'PST', 'ROL', 'PER', 'HAS', 'CON', 'NIL', 'NIL', 'ART', 'NIL', 'NIL', 'EXS', 'REL', 'DEF', 'HAP', 'QUE']
+
+Sentence: A dog is a clever animal .
+Correct tags: ['AND', 'CON', 'ENS', 'DIS', 'IST', 'CON', 'NIL']
+Predicted tags: ['DIS', 'CON', 'ENS', 'DIS', 'IST', 'CON', 'NIL']
+
+Sentence: People should love one~another .
+Correct tags: ['CON', 'NEC', 'EXS', 'REF', 'NIL']
+Predicted tags: ['CON', 'NEC', 'EXS', 'QUC', 'NIL']
+
+Sentence: It is not raining .
+Correct tags: ['NIL', 'NOW', 'NOT', 'EXG', 'NIL']
+Predicted tags: ['PRO', 'NOW', 'NOT', 'EXG', 'NIL']
+
+Sentence: The government has imposed a new tax on wine .
+Correct tags: ['DEF', 'CON', 'NOW', 'EXS', 'DIS', 'IST', 'CON', 'REL', 'CON', 'NIL']
+Predicted tags: ['DEF', 'CON', 'NOW', 'EXT', 'DIS', 'IST', 'CON', 'REL', 'CON', 'NIL']
+
+Sentence: Where is the national~hurricane~center located ?
+Correct tags: ['QUE', 'NOW', 'DEF', 'ORG', 'IST', 'QUE']
+Predicted tags: ['QUE', 'ENS', 'DEF', 'ORG', 'IST', 'QUE']
+
+Sentence: He 's dark and handsome .
+Correct tags: ['PRO', 'NOW', 'IST', 'AND', 'IST', 'NIL']
+Predicted tags: ['PRO', 'NOW', 'IST', 'COO', 'IST', 'NIL']
+
+Sentence: If I had money , I could buy it .
+Correct tags: ['IMP', 'PRO', 'EXS', 'CON', 'NIL', 'PRO', 'POS', 'EXS', 'PRO', 'NIL']
+Predicted tags: ['IMP', 'PRO', 'EPS', 'CON', 'NIL', 'PRO', 'POS', 'EXS', 'PRO', 'NIL']
+
+Sentence: He 's a very capable business~man .
+Correct tags: ['PRO', 'ENS', 'DIS', 'INT', 'IST', 'ROL', 'NIL']
+Predicted tags: ['PRO', 'NOW', 'DIS', 'INT', 'IST', 'ROL', 'NIL']
+
+Sentence: Tom is a friend of Mary 's .
+Correct tags: ['PER', 'ENS', 'DIS', 'ROL', 'REL', 'PER', 'NIL', 'NIL']
+Predicted tags: ['PER', 'ENS', 'DIS', 'ROL', 'REL', 'PER', 'HAS', 'NIL']
+
+Sentence: Lincoln was elected President in 1860 .
+Correct tags: ['PER', 'PST', 'EXS', 'ROL', 'REL', 'YOC', 'NIL']
+Predicted tags: ['PER', 'PST', 'EXS', 'CON', 'REL', 'YOC', 'NIL']
+
+Sentence: Neither Tom nor Mary speaks Spanish .
+Correct tags: ['NOT', 'PER', 'DIS', 'PER', 'ENS', 'CON', 'NIL']
+Predicted tags: ['NOT', 'PER', 'NOT', 'PER', 'ENS', 'CON', 'NIL']
+
+Sentence: The president appointed a new manager .
+Correct tags: ['DEF', 'ROL', 'EPS', 'DIS', 'IST', 'ROL', 'NIL']
+Predicted tags: ['DEF', 'ROL', 'EPS', 'DIS', 'IST', 'CON', 'NIL']
+
+Sentence: It 's a~quarter~to~two .
+Correct tags: ['NIL', 'NOW', 'CLO', 'NIL']
+Predicted tags: ['PRO', 'NOW', 'CLO', 'NIL']
+
+Sentence: Lida is a close friend of Mary 's .
+Correct tags: ['PER', 'ENS', 'DIS', 'IST', 'ROL', 'REL', 'PER', 'NIL', 'NIL']
+Predicted tags: ['PER', 'ENS', 'DIS', 'IST', 'ROL', 'REL', 'PER', 'HAS', 'NIL']
+
+Sentence: I am singing with my children .
+Correct tags: ['PRO', 'NOW', 'EXG', 'REL', 'HAS', 'ROL', 'NIL']
+Predicted tags: ['PRO', 'NOW', 'EXG', 'REL', 'HAS', 'CON', 'NIL']
+
+Sentence: Tom is playing the violin now .
+Correct tags: ['PER', 'NOW', 'EXG', 'DEF', 'CON', 'NIL', 'NIL']
+Predicted tags: ['PER', 'NOW', 'EXG', 'DEF', 'CON', 'NOW', 'NIL']
+
