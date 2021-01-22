@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf8
-"""Example of training spaCy's named entity recognizer, starting off with an
+"""
+Example of training spaCy's named entity recognizer, starting off with an
 existing model or a blank model.
 
 For more details, see the documentation:
@@ -22,14 +23,6 @@ from spacy.util import minibatch, compounding
 
 from tagtical_insertion.preprocessing.extraction import to_spacy_format,\
     extract_from_conll
-
-# training data
-# train_data = [
-#     ("Who is Shaka Khan?", {"entities": [(7, 17, "PERSON")]}),
-#     ("I like London and Berlin.",
-#      {"entities": [(7, 13, "LOC"), (18, 24, "LOC")]}),
-# ]
-
 
 @plac.annotations(
     model=(

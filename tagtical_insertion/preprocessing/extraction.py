@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
+"""
+extraction.py
+
+This script takes the .conll files and converts them into SpaCy format.
+"""
+
 import pickle
 import re
 
-
 def extract_from_conll(filename):
-    """Extract relevant data from the .conll files.
+    """
+    Extract relevant data from the .conll files.
     Also converts the data to a spaCy-friendly format.
 
     Parameters
@@ -53,7 +59,8 @@ def extract_from_conll(filename):
 
 
 def get_coordinates(tokens, tags, sentence):
-    """Get coordinates of a given token in a sentence.
+    """
+    Get coordinates of a given token in a sentence.
 
     Returns the coordinates in a spaCy-friendly format,
     along with the relevant semantic tag.
@@ -71,7 +78,6 @@ def get_coordinates(tokens, tags, sentence):
     -------
 
     """
-    # {"entities": [(0, 4, "ORG")]}
     training_data = []
     counter = 0
     pattern = rf"[0-9a-zA-z~&.?!$%€,`'’°:;\"\/\-]+"
@@ -86,7 +92,8 @@ def get_coordinates(tokens, tags, sentence):
 
 
 def to_spacy_format(corpus):
-    """Gets the relevant information from the corpus
+    """
+    Gets the relevant information from the corpus
     for use with spaCy.
 
     Parameters
@@ -109,7 +116,6 @@ def to_spacy_format(corpus):
 
 def store(corpus, filename):
     """
-
     Parameters
     ----------
     corpus

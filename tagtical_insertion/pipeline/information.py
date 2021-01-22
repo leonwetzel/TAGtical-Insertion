@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+"""
+information.py
+
+Does not compute anything, simply defines the files and PMB data.
+"""
+
 import os
 
 import requests
