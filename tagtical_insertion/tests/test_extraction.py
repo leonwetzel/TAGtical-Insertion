@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+"""
+tests.py
+
+Defines the test set and data.
+"""
+
 import pytest
 
 from tagtical_insertion.preprocessing.extraction import get_coordinates
