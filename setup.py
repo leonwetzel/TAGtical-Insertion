@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="leonwetzel", # Replace with your own username
+    name="tagtical_insertion", # Replace with your own username
     version="1.0.0",
     author="Leon Wetzel, Marjolein Spijkerman and Nik van 't Slot",
     author_email="l.f.a.wetzel@student.rug.nl",
