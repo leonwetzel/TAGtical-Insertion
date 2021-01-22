@@ -5,6 +5,7 @@ manual_sentences.py
 This script allows the user to type in their own sentences.
 The typed words are then annotated with semantic tags.
 """
+
 from __future__ import unicode_literals, print_function
 
 import os
@@ -16,7 +17,8 @@ import spacy
 def main():
 	output_dir = 'model/'
 	nlp = spacy.load(output_dir)
-
+	
+	# While loop to allow user to exit the script with an enter
 	while True:
 		text = input("Please type in a sentence (ENTER to stop): ")
 		if text == "":
