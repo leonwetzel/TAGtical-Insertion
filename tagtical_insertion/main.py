@@ -20,6 +20,7 @@ def main():
     nlp = spacy.load(f"{os.getcwd()}/{MODEL_PATH}")
 
     for line in sys.stdin:
+        print(line)
         prediction = nlp(line)
 
         for entity in prediction.ents:

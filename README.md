@@ -10,6 +10,11 @@ The main purpose of TAGtical Insertion is to tag sentences using
  The data used in this application originates from the Parallel Meaning
   Bank, also known as the PMB ([Abzianidze et al., 2017](https://www.aclweb.org/anthology/E17-2039.pdf)).
 
+This repository also contains our related publication *An ATM for
+ Meaning? A spaCy-based Approach to the Semantic Tagging of the Parallel
+  Meaning Bank with TAGtical Insertion*. You can find the paper
+   in the `doc` folder.
+
 ## Getting started
 
 ### Installing additional packages
@@ -83,7 +88,17 @@ We can apply the same techniques to perform semantic tagging, using the
 tags mentioned in [Abzianidze and Bos (2017)](https://www.aclweb.org/anthology/W17-6901.pdf)
 as the labels for the tokens.
 
-The script ``tagger.py`` offers the functionality to create a tagger model
+The script ``model_creator.py`` offers the functionality to create a
+ tagger model. This tagger model essentially resembles a `spaCy` processing
+ pipeline. The main difference with a default pipeline is that our pipeline
+ only contains the NER step to perform the semantic tagging. More information
+ on using processing pipelines can be found [here](https://spacy.io/usage/training).
+ 
+ A brand new model can be created by running `model_creator.py` from
+  the module `tagtical_insertion.pipeline`. The script performs the
+  extraction and preprocessing of the data from the .conll training file.
+  The model is conveniently stored in the `model` directory, part of the
+  same `tagtical_insertion.pipeline` module as mentioned above.
 
 ## References
 
