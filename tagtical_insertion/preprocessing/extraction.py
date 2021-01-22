@@ -32,8 +32,6 @@ def extract_from_conll(filename):
         elif line.isspace():
             if tokens and semantic_tags:
                 sentence = " ".join(tokens)
-                print(sentence)
-
                 entities = get_coordinates(tokens, semantic_tags,
                                            sentence)
 
