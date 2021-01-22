@@ -14,11 +14,7 @@ from __future__ import unicode_literals, print_function
 import os
 import sys
 #insert the correct path to the preprocessing folder, allowing the program to download the files from extraction.py
-#sys.path.insert(0, '../preprocessing/')
-#for some reason general paths don't work right now on Marjolein's/my virtual box, thus other path here :)
-#comment away the path you don't need
 sys.path.insert(0, "../preprocessing/")
-#sys.path.insert(0, '/home/tux/Computational-Semantics/tagtical_insertion/preprocessing/')
 
 import re
 import random
