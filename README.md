@@ -83,7 +83,7 @@ when using the data from Rik van Noord's repository.
 ## Training the tagger
 
 As mentioned in the last subsection, we use spaCy for the construction
-of our semantic tagger [(Montani et al., 2020)](https://doi.org/10.5281/zenodo.1212303). spaCy offers functionality to create custom NER-like taggers.
+of our semantic tagger ([Montani et al., 2020](https://doi.org/10.5281/zenodo.1212303)). spaCy offers functionality to create custom NER-like taggers.
 We can apply the same techniques to perform semantic tagging, using the
 tags mentioned in [Abzianidze and Bos (2017)](https://www.aclweb.org/anthology/W17-6901.pdf)
 as the labels for the tokens.
